@@ -1,0 +1,131 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvmuu0uorl42t"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_n4cp8"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n4cp8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1146.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="divisao" type="Node2D" parent="."]
+
+[node name="divisor" type="ColorRect" parent="divisao"]
+offset_left = 566.0
+offset_top = 7.0
+offset_right = 575.0
+offset_bottom = 47.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor2" type="ColorRect" parent="divisao"]
+offset_left = 566.0
+offset_top = 83.0
+offset_right = 575.0
+offset_bottom = 123.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor3" type="ColorRect" parent="divisao"]
+offset_left = 567.0
+offset_top = 160.0
+offset_right = 576.0
+offset_bottom = 200.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor4" type="ColorRect" parent="divisao"]
+offset_left = 567.0
+offset_top = 234.0
+offset_right = 576.0
+offset_bottom = 274.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor5" type="ColorRect" parent="divisao"]
+offset_left = 566.0
+offset_top = 309.0
+offset_right = 575.0
+offset_bottom = 349.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor6" type="ColorRect" parent="divisao"]
+offset_left = 566.0
+offset_top = 391.0
+offset_right = 575.0
+offset_bottom = 431.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor7" type="ColorRect" parent="divisao"]
+offset_left = 568.0
+offset_top = 466.0
+offset_right = 577.0
+offset_bottom = 506.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor8" type="ColorRect" parent="divisao"]
+offset_left = 568.0
+offset_top = 530.0
+offset_right = 577.0
+offset_bottom = 570.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor9" type="ColorRect" parent="divisao"]
+offset_left = 568.0
+offset_top = 605.0
+offset_right = 577.0
+offset_bottom = 645.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 50.0
+offset_right = 298.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 50
+text = "Just"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 794.0
+offset_top = 48.0
+offset_right = 834.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 50
+text = "Pong"
+
+[node name="MenuBar" type="MenuBar" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 351.0
+offset_right = 316.0
+offset_bottom = 478.0
+
+[node name="vsBot" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_right = 115.0
+offset_bottom = 31.0
+text = "Vs Bot"
+
+[node name="pvp" type="Button" parent="MenuBar"]
+offset_left = -1.0
+offset_top = 35.0
+offset_right = 114.0
+offset_bottom = 66.0
+text = "P v P"
+
+[node name="solo" type="Button" parent="MenuBar"]
+offset_left = -1.0
+offset_top = 73.0
+offset_right = 114.0
+offset_bottom = 104.0
+text = "Solo Match"
+
+[connection signal="pressed" from="MenuBar/vsBot" to="." method="_on_vs_bot_pressed"]
+[connection signal="pressed" from="MenuBar/pvp" to="." method="_on_pvp_pressed"]
+[connection signal="pressed" from="MenuBar/solo" to="." method="_on_solo_pressed"]

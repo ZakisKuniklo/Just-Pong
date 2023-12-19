@@ -1,0 +1,171 @@
+[gd_scene load_steps=9 format=3 uid="uid://h67nwd47xjw5"]
+
+[ext_resource type="PackedScene" uid="uid://2sfgylxr32sa" path="res://bola.tscn" id="1_r1fsq"]
+[ext_resource type="Script" path="res://Global.gd" id="1_syb24"]
+[ext_resource type="PackedScene" uid="uid://diuclbm7md4xw" path="res://bot.tscn" id="2_4f5aa"]
+[ext_resource type="PackedScene" uid="uid://c4wtstk0tgenl" path="res://player.tscn" id="3_hxnnl"]
+[ext_resource type="Script" path="res://p1.gd" id="5_5pbia"]
+[ext_resource type="Script" path="res://p2.gd" id="6_1nxct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiqcw"]
+size = Vector2(22, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb1sv"]
+size = Vector2(1159.75, 35)
+
+[node name="mesa" type="Node2D"]
+script = ExtResource("1_syb24")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1150.0
+offset_bottom = 646.0
+color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="divisao" type="Node2D" parent="."]
+
+[node name="divisor" type="ColorRect" parent="divisao"]
+offset_left = 566.0
+offset_top = 7.0
+offset_right = 575.0
+offset_bottom = 47.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor2" type="ColorRect" parent="divisao"]
+offset_left = 566.0
+offset_top = 83.0
+offset_right = 575.0
+offset_bottom = 123.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor3" type="ColorRect" parent="divisao"]
+offset_left = 567.0
+offset_top = 160.0
+offset_right = 576.0
+offset_bottom = 200.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor4" type="ColorRect" parent="divisao"]
+offset_left = 567.0
+offset_top = 234.0
+offset_right = 576.0
+offset_bottom = 274.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor5" type="ColorRect" parent="divisao"]
+offset_left = 566.0
+offset_top = 309.0
+offset_right = 575.0
+offset_bottom = 349.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor6" type="ColorRect" parent="divisao"]
+offset_left = 566.0
+offset_top = 391.0
+offset_right = 575.0
+offset_bottom = 431.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor7" type="ColorRect" parent="divisao"]
+offset_left = 568.0
+offset_top = 466.0
+offset_right = 577.0
+offset_bottom = 506.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor8" type="ColorRect" parent="divisao"]
+offset_left = 568.0
+offset_top = 530.0
+offset_right = 577.0
+offset_bottom = 570.0
+metadata/_edit_use_anchors_ = true
+
+[node name="divisor9" type="ColorRect" parent="divisao"]
+offset_left = 568.0
+offset_top = 605.0
+offset_right = 577.0
+offset_bottom = 645.0
+metadata/_edit_use_anchors_ = true
+
+[node name="borda" type="Node2D" parent="."]
+
+[node name="borda1" type="StaticBody2D" parent="borda" groups=["golEsq"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borda/borda1" groups=["golEsq"]]
+position = Vector2(-12, 324)
+shape = SubResource("RectangleShape2D_wiqcw")
+
+[node name="borda2" type="StaticBody2D" parent="borda" groups=["golDir"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borda/borda2" groups=["golDir"]]
+position = Vector2(1163, 323)
+shape = SubResource("RectangleShape2D_wiqcw")
+
+[node name="borda3" type="StaticBody2D" parent="borda"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borda/borda3"]
+position = Vector2(575.25, -15)
+shape = SubResource("RectangleShape2D_jb1sv")
+
+[node name="borda4" type="StaticBody2D" parent="borda"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="borda/borda4"]
+position = Vector2(570, 663)
+shape = SubResource("RectangleShape2D_jb1sv")
+
+[node name="bola" parent="." instance=ExtResource("1_r1fsq")]
+position = Vector2(520, 272)
+motion_mode = 1
+
+[node name="bot" parent="." instance=ExtResource("2_4f5aa")]
+position = Vector2(35, 20)
+
+[node name="Player" parent="." instance=ExtResource("3_hxnnl")]
+position = Vector2(1097, 56)
+
+[node name="Player12" parent="." instance=ExtResource("3_hxnnl")]
+process_mode = 4
+visible = false
+position = Vector2(35, 20)
+
+[node name="points" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="p1" type="Label" parent="points"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 23.0
+offset_right = 288.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_5pbia")
+metadata/_edit_use_anchors_ = true
+
+[node name="p2" type="Label" parent="points"]
+layout_mode = 0
+offset_left = 862.0
+offset_top = 25.0
+offset_right = 902.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_1nxct")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="colidiu" from="bola" to="bot" method="_on_bola_colidiu"]
+[connection signal="posicao" from="bola" to="bot" method="_on_bola_posicao"]

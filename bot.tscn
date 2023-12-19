@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://diuclbm7md4xw"]
+
+[ext_resource type="Script" path="res://bot.gd" id="1_67lk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuid0"]
+size = Vector2(11, 102)
+
+[node name="bot" type="AnimatableBody2D"]
+script = ExtResource("1_67lk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 41)
+shape = SubResource("RectangleShape2D_kuid0")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -7.0
+offset_top = -10.0
+offset_right = 4.0
+offset_bottom = 92.0
